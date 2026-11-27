@@ -1,589 +1,189 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Arla Hoxha | Marketing & Public Relations</title>
-
+<meta name="description" content="Portfolio of Arla Hoxha: Public Relations, Digital Marketing and Brand Communication.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Playfair+Display:wght@800;900&family=Yellowtail&display=swap" rel="stylesheet">
 <style>
-:root {
-  --cream: #F5F0E8;
-  --beige: #D8C7B4;
-  --gold: #92775B;
-  --dark: #302821;
-  --white: #FFFCF7;
-}
+:root{--navy:#5b1e19;--light:#fdf7e9;--acc:#c2d6ea;--w:#fdf7e9}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--light);color:var(--navy);line-height:1.6}
+a{color:inherit}
+section{padding:96px 6vw;position:relative;overflow:hidden}
+.dark{background:var(--navy);color:var(--w)}
+.wrap{max-width:1120px;margin:0 auto;position:relative;z-index:1}
+.label{font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+.light .label{color:var(--navy);opacity:.6}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif}h1{font-size:clamp(4rem,15vw,12rem);font-weight:900;line-height:1;letter-spacing:-.03em}.script,.sub{font-family:Yellowtail,cursive;font-weight:400}
+h2{font-size:clamp(2.2rem,5vw,4rem);font-weight:900;line-height:1.1;letter-spacing:-.02em;margin-bottom:40px}
+h3{font-size:1.25rem;font-weight:700;line-height:1.3}
+.ring{position:absolute;border:2px solid rgba(255,255,255,.09);border-radius:50%;pointer-events:none}
+.light .ring{border-color:rgba(91,30,25,.09)}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;background:rgba(91,30,25,.92);backdrop-filter:blur(8px);color:var(--w)}
+nav b{font-weight:800;font-size:1.3rem}
+nav ul{display:flex;gap:26px;list-style:none;font-size:.8rem;font-weight:700;letter-spacing:.12em}
+nav a{text-decoration:none;opacity:.85}nav a:hover{opacity:1;color:var(--acc)}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:120px}
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--cream);
-  color: var(--dark);
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.8;
-}
-
-h1, h2, h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-a {
-  color: inherit;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 8%;
-  border-bottom: 1px solid var(--beige);
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.logo {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 32px;
-  text-decoration: none;
-}
-
-nav ul {
-  display: flex;
-  gap: 25px;
-  list-style: none;
-  flex-wrap: wrap;
-}
-
-nav a {
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-nav a.logo {
-  font-size: 32px;
-}
-
-nav a:hover {
-  color: var(--gold);
-}
-
-.hero {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 80px 8%;
-  background: radial-gradient(
-    ellipse at center,
-    #FFFCF7,
-    #F5F0E8 70%
-  );
-  animation: appear 1s ease;
-}
-
-.eyebrow {
-  font-size: 11px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #80654A;
-  margin-bottom: 25px;
-}
-
-.hero h1 {
-  font-size: clamp(65px, 11vw, 150px);
-  letter-spacing: -3px;
-}
-
-.hero h2 {
-  font-size: clamp(20px, 4vw, 32px);
-  margin-top: 20px;
-}
-
-.tagline {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
-  font-size: 24px;
-  color: #80654A;
-  margin: 25px 0 35px;
-}
-
-.button {
-  display: inline-block;
-  padding: 15px 30px;
-  background: var(--dark);
-  color: var(--cream);
-  text-decoration: none;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: 0.3s;
-}
-
-.button:hover {
-  background: #72583F;
-  transform: translateY(-3px);
-}
-
-section {
-  padding: 100px 8%;
-  scroll-margin-top: 30px;
-}
-
-.section-title {
-  font-size: clamp(36px, 6vw, 65px);
-  margin-bottom: 30px;
-}
-
-.about {
-  background: var(--white);
-  text-align: center;
-}
-
-.about p {
-  max-width: 760px;
-  margin: 15px auto;
-}
-
-.skills {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 40px;
-}
-
-.skills span {
-  border: 1px solid var(--beige);
-  padding: 10px 18px;
-  font-size: 12px;
-}
-
-.project-intro {
-  max-width: 750px;
-  margin-bottom: 45px;
-}
-
-.project-name {
-  font-size: 42px;
-  margin-bottom: 15px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit, minmax(min(100%, 280px), 1fr)
-  );
-  gap: 30px;
-}
-
-.card {
-  background: var(--white);
-  overflow: hidden;
-  border: 1px solid #E5D9CB;
-  transition: transform 0.3s,
-              box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px #30282112;
-}
-
-.card img {
-  width: 100%;
-  height: 350px;
-  object-fit: contain;
-  background: #EDE4D9;
-  display: block;
-}
-
-.card-content {
-  padding: 28px;
-}
-
-.card h3 {
-  font-size: 25px;
-  margin: 12px 0;
-}
-
-.category {
-  text-transform: uppercase;
-  font-size: 10px;
-  color: #80654A;
-  letter-spacing: 2px;
-}
-
-.card p {
-  font-size: 13px;
-}
-
-.editorial {
-  background: #EDE4D9;
-}
-
-.article-link {
-  display: inline-block;
-  margin-top: 22px;
-  text-decoration: none;
-  border-bottom: 1px solid #92775B;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.article-feature {
-  background: var(--white);
-  padding: 35px;
-  margin-bottom: 30px;
-  border-left: 3px solid var(--gold);
-}
-
-.article-feature h3 {
-  font-size: 30px;
-  margin: 15px 0;
-}
-
-.contact {
-  text-align: center;
-  background: var(--dark);
-  color: var(--cream);
-}
-
-.contact .eyebrow {
-  color: #D8C7B4;
-}
-
-.contact p {
-  max-width: 600px;
-  margin: 20px auto;
-}
-
-.contact .button {
-  background: var(--cream);
-  color: var(--dark);
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  font-size: 11px;
-  letter-spacing: 1px;
-  border-top: 1px solid var(--beige);
-}
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 600px) {
-  nav {
-    justify-content: center;
-  }
-  nav ul {
-    justify-content: center;
-    gap: 16px;
-  }
-  section {
-    padding: 65px 6%;
-  }
-  .hero h1 {
-    letter-spacing: -2px;
-  }
-  .card img {
-    height: auto;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { animation: none !important; transition: none !important; }
-}
+.hero .bar{width:64px;height:4px;background:var(--acc);border-radius:2px;margin:18px 0}
+.hero p.role{font-size:1.5rem;font-weight:700}
+.hero p.tag{font-size:1.15rem;opacity:.85;max-width:520px;margin-top:8px}
+.btn{display:inline-block;margin-top:34px;padding:14px 30px;border-radius:40px;background:var(--w);color:var(--navy);font-weight:700;text-decoration:none}
+.btn:hover{background:var(--acc)}
+.about{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+.photo{aspect-ratio:5/7;border-radius:40px;background:rgba(91,30,25,.1);display:flex;align-items:center;justify-content:center;font-weight:700;opacity:.9;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.about h2{margin-bottom:12px}
+.sub{font-size:2rem;opacity:.85;margin-bottom:18px}
+.about p{font-size:1.1rem;margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.tags span{background:var(--navy);color:var(--w);padding:7px 16px;border-radius:30px;font-size:.85rem;font-weight:700}
+.dark .tags span,.pill{background:rgba(255,255,255,.14)}
+.pill.solid{background:var(--w);color:var(--navy)}
+.pill{display:inline-block;padding:10px 20px;border-radius:30px;font-weight:700;font-size:.95rem;color:var(--w);margin:0 10px 12px 0}
+.row{display:grid;grid-template-columns:190px 1fr;gap:32px;padding:30px 0;border-top:1.5px solid rgba(255,255,255,.25)}
+.row .yr{font-size:1.6rem;font-weight:800}
+.row h3{font-size:1.5rem}
+.row .role{color:var(--acc);font-size:.85rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:4px 0 10px}
+.row p{opacity:.88;max-width:680px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.item{border-left:6px solid var(--navy);padding:4px 0 4px 22px;margin-bottom:30px}
+.item small{font-weight:700;opacity:.6;letter-spacing:.06em}
+.item h3{margin:2px 0}.item p{opacity:.8}
+.group{margin-bottom:34px}
+.group .label{margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
+.grid.four{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:rgba(255,255,255,.08);border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.light .card{background:var(--navy);color:var(--w)}
+.img{border-radius:20px;background:rgba(255,255,255,.14);aspect-ratio:4/3;overflow:hidden}
+.img img{width:100%;height:100%;object-fit:cover;display:block}
+.cat{align-self:flex-start;background:var(--acc);color:var(--navy);font-size:.78rem;font-weight:700;padding:5px 14px;border-radius:20px}
+.card p{font-size:.95rem;opacity:.85}
+.card a{color:var(--acc);font-weight:700;font-size:.9rem;text-decoration:none;margin-top:auto}
+.bp .img{aspect-ratio:4/5}.light .pill.solid{background:var(--navy);color:var(--w)}.now{margin-top:26px;background:var(--navy);color:var(--w);padding:18px 24px;border-radius:24px}.now small{display:block;color:var(--acc);font-weight:700;letter-spacing:.14em;font-size:.75rem}.now span{opacity:.85}
+.bp figure{margin:0}
+.intro{max-width:620px;font-size:1.1rem;opacity:.9;margin:-16px 0 36px}
+.contact h2{font-size:clamp(2.6rem,7vw,5.5rem);max-width:900px}
+.contact p{font-size:1.2rem;opacity:.88;max-width:620px;margin-bottom:34px}
+footer{background:var(--navy);color:var(--w);opacity:.95;text-align:center;padding:26px;font-size:.85rem;border-top:1px solid rgba(255,255,255,.15)}
+@media(max-width:800px){nav ul{display:none}.about,.cols{grid-template-columns:1fr}.row{grid-template-columns:1fr;gap:8px}.photo{max-width:340px}}
+.stripes{background:repeating-linear-gradient(90deg,#c2d6ea 0 50px,#fdf7e9 50px 100px);color:var(--navy)}
+.hc{text-align:center}.by{font-size:clamp(2rem,5vw,3.4rem);transform:translateX(-18%);margin-bottom:-.6em}
+.meta{display:flex;justify-content:space-between;align-items:baseline;max-width:900px;margin:8px auto 0;font-size:1.1rem}.meta .script{font-size:clamp(1.6rem,4vw,2.8rem)}
+.tagp{display:inline-block;background:var(--light);padding:12px 26px;border-radius:30px;font-weight:700;margin-top:30px}
+.hero .btn{background:var(--navy);color:var(--light);display:table;margin:26px auto 0}.hero .btn:hover{background:#7a2a23}
+.blue{background:var(--acc)}.now{background:var(--acc)!important;color:var(--navy)!important}.now small{color:var(--navy)!important;opacity:.7}
+.insta{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}.insta p{font-size:1.1rem;margin-bottom:6px}
+.insta .btn{background:var(--navy);color:var(--light)}.insta .btn:hover{background:#7a2a23}
+.embed{justify-self:center;width:100%;max-width:400px;background:var(--navy);padding:14px;border-radius:36px}
+.embed iframe{width:100%;height:640px;border:0;border-radius:24px;background:#fff;display:block}
+@media(max-width:800px){.insta{grid-template-columns:1fr}}
+.embed .open{display:block;text-align:center;color:var(--light);font-weight:700;text-decoration:none;padding:14px 0 4px}.embed .open:hover{color:var(--acc)}
 </style>
 </head>
-
 <body>
 
-<nav>
-  <a href="#" class="logo">AH.</a>
-  <ul>
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="#work">PORTFOLIO</a></li>
-    <li><a href="#editorial">EDITORIAL</a></li>
-    <li><a href="#contact">CONTACT</a></li>
-  </ul>
-</nav>
+<nav><b>AH.</b>
+<ul><li><a href="#about">ABOUT</a></li><li><a href="#work">PORTFOLIO</a></li><li><a href="#instagram">INSTAGRAM</a></li><li><a href="#editorial">EDITORIAL</a></li><li><a href="#contact">CONTACT</a></li></ul></nav>
 
-<header class="hero">
-  <p class="eyebrow">Professional Portfolio</p>
-  <h1>Arla Hoxha</h1>
-  <h2>Public Relations & Marketing</h2>
-  <p class="tagline">
-    Connecting brands with people through meaningful stories.
-  </p>
-  <a href="#work" class="button">Explore My Work</a>
-</header>
+<section class="hero stripes">
+<div class="wrap hc">
+<div class="script by">By Arla Hoxha</div>
+<h1>Portfolio</h1>
+<div class="meta"><span>[2026]</span><span class="script">Public Relations &amp; Marketing</span></div>
+<p class="tagp">Connecting brands with people through meaningful stories.</p>
+<a class="btn" href="#work">Explore My Work</a>
+</div></section>
 
-<section class="about" id="about">
-  <p class="eyebrow">01 / About Me</p>
-  <h2 class="section-title">Creativity meets strategy.</h2>
-
-  <p>
-    My professional focus is Public Relations,
-    Marketing and Brand Communication, with an
-    interest in creative storytelling, editorial
-    content and meaningful audience connections.
-  </p>
-
-  <p>
-    This portfolio brings together selected work
-    in beauty communication, digital content
-    and consumer-focused storytelling.
-  </p>
-
-  <div class="skills">
-    <span>Public Relations</span>
-    <span>Digital Marketing</span>
-    <span>Brand Communication</span>
-    <span>Creative Copywriting</span>
-    <span>Content Marketing</span>
-    <span>Editorial Writing</span>
-    <span>Social Media Content</span>
-  </div>
-</section>
-
-<section id="work">
-  <p class="eyebrow">02 / Selected Work</p>
-  <h2 class="section-title">The Portfolio.</h2>
-
-  <h3 class="project-name">Koral Secrets</h3>
-
-  <p class="project-intro">
-    A curated selection of creative marketing
-    and communication materials for the Korean
-    beauty and skincare market in Albania.
-    Exploring product storytelling, visual
-    communication and consumer education.
-  </p>
-
-  <div class="grid">
-
-    <article class="card">
-      <img loading="lazy"
-      src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/korean-supplements.jpg"
-      alt="Korean Supplements carousel">
-      <div class="card-content">
-        <span class="category">Educational Content</span>
-        <h3>Korean Supplements</h3>
-        <p>
-          An educational carousel concept combining
-          floating capsules and editorial typography
-          to introduce Korean supplements and create
-          curiosity around the product category.
-        </p>
-      </div>
-    </article>
-
-    <article class="card">
-      <img loading="lazy"
-      src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/korean-beauty.jpg"
-      alt="Korean Beauty Trends">
-      <div class="card-content">
-        <span class="category">Trend Marketing</span>
-        <h3>Korean Beauty Trends</h3>
-        <p>
-          A bold creative concept using expressive
-          typography, vibrant colors and playful
-          beauty imagery to capture attention and
-          introduce Korean beauty trends.
-        </p>
-      </div>
-    </article>
-
-    <article class="card">
-      <img loading="lazy"
-      src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/hydra-calming.jpg"
-      alt="Centellian24+ Hydra Calming">
-      <div class="card-content">
-        <span class="category">Product Communication</span>
-        <h3>Hydra Calming</h3>
-        <p>
-          A product education visual combining
-          lifestyle imagery, product photography
-          and blue graphic accents to simplify
-          skincare information.
-        </p>
-      </div>
-    </article>
-
-    <article class="card">
-      <img loading="lazy"
-      src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/active-renew.jpg"
-      alt="Centellian24+ Active Renew PDRN">
-      <div class="card-content">
-        <span class="category">Product Positioning</span>
-        <h3>Active Renew PDRN</h3>
-        <p>
-          A coordinated product spotlight using
-          purple accents and application imagery
-          to communicate product positioning
-          and key features.
-        </p>
-      </div>
-    </article>
-
-    <article class="card">
-      <img loading="lazy"
-      src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/retinol.jpg"
-      alt="Retinol and Bakuchiol">
-      <div class="card-content">
-        <span class="category">Creative Copywriting</span>
-        <h3>Retinol & Bakuchiol</h3>
-        <p>
-          An ingredient-focused visual combining
-          product imagery and concise educational
-          copy to introduce a dual-ingredient
-          skincare concept.
-        </p>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<section class="editorial" id="editorial">
-  <p class="eyebrow">03 / Published Articles</p>
-  <h2 class="section-title">Words that connect.</h2>
-
-  <div class="article-feature">
-    <span class="category">Brand Storytelling</span>
-    <h3>SUNGBOON EDITOR</h3>
-    <p>
-      An editorial feature exploring Korean
-      skincare, brand identity and modern
-      beauty communication.
-    </p>
-    <a class="article-link"
-      href="https://koralsecrets.al/blogs/news/sungboon-editor-marka-koreane-qe-redaktoi-standardet-e-skincare-it-modern-1"
-      target="_blank" rel="noopener noreferrer">
-      Read the published article &rarr;
-    </a>
-  </div>
-
-  <div class="grid">
-
-    <article class="card">
-      <a href="https://koralsecrets.al/blogs/news/a-duhet-te-perdorni-retinol-gjate-veres"
-        target="_blank" rel="noopener noreferrer">
-        <img loading="lazy"
-        src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/retinol-summer-article.jpg"
-        alt="Should You Use Retinol During Summer?">
-      </a>
-      <div class="card-content">
-        <span class="category">Educational Copywriting</span>
-        <h3>Should You Use Retinol During Summer?</h3>
-        <p>By Arla Hoxha</p>
-        <p>
-          An educational article addressing common
-          questions and misconceptions surrounding
-          seasonal retinol use.
-        </p>
-        <a class="article-link"
-          href="https://koralsecrets.al/blogs/news/a-duhet-te-perdorni-retinol-gjate-veres"
-          target="_blank" rel="noopener noreferrer">
-          Read article &rarr;
-        </a>
-      </div>
-    </article>
-
-    <article class="card">
-      <a href="https://koralsecrets.al/blogs/news/retinol-vs-retinal-cili-eshte-ndryshimi-dhe-cili-eshte-me-potent"
-        target="_blank" rel="noopener noreferrer">
-        <img loading="lazy"
-        src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/retinol-vs-retinal-article.jpg"
-        alt="Retinol versus Retinal">
-      </a>
-      <div class="card-content">
-        <span class="category">Editorial Writing</span>
-        <h3>Retinol vs Retinal</h3>
-        <p>By Arla Hoxha</p>
-        <p>
-          A comparative article explaining the
-          distinction between two skincare ingredients
-          through accessible, consumer-focused writing.
-        </p>
-        <a class="article-link"
-          href="https://koralsecrets.al/blogs/news/retinol-vs-retinal-cili-eshte-ndryshimi-dhe-cili-eshte-me-potent"
-          target="_blank" rel="noopener noreferrer">
-          Read article &rarr;
-        </a>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <p class="eyebrow">04 / Let's Connect</p>
-  <h2 class="section-title">Let's create something meaningful.</h2>
-  <p>
-    Open to professional opportunities,
-    creative collaborations and meaningful
-    projects in Public Relations and Marketing.
-  </p>
-
-  <div style="margin: 35px 0;">
-
-    <p style="color: #D8C7B4; font-size: 11px; letter-spacing: 3px;">
-      EMAIL
-    </p>
-
-    <p>
-      <a href="mailto:arlamarangozi@gmail.com">
-        arlamarangozi@gmail.com
-      </a>
-    </p>
-
-    <p style="color: #D8C7B4; font-size: 11px; letter-spacing: 3px; margin-top: 25px;">
-      PHONE
-    </p>
-
-    <p>
-      <a href="tel:+355696316799">
-        +355 69 631 6799
-      </a>
-    </p>
-
-  </div>
+<section class="light" id="about">
+<div class="ring" style="width:520px;height:520px;right:-120px;bottom:-200px"></div>
+<div class="wrap about">
+<div class="photo"><img src="images/arla.jpg" alt="Arla Hoxha" onerror="this.remove()"></div>
+<div>
+<div class="label">01 / About me</div>
+<h2>About me</h2>
+<div class="sub">Creativity meets strategy.</div>
+<p>Digital marketing professional with experience building brand presence through content, social media, e-commerce and promotional campaigns.</p>
+<p>Hands-on with Shopify and WordPress, influencer collaborations and performance analysis. Retail and sales management gave me a direct understanding of customers and products.</p>
+<p>Organised, creative and results-oriented.</p>
+<div class="tags"><span>Public Relations</span><span>Digital Marketing</span><span>Brand Communication</span><span>Creative Copywriting</span><span>Content Marketing</span><span>Editorial Writing</span><span>Social Media Content</span></div>
+<div class="now"><small>CURRENTLY</small><b>General Manager &amp; Digital Marketing Manager</b><br><span>Koral Secrets, Tirana · 2024 – Now</span></div>
+</div></div></section>
 
 
-  <a class="button"
-    href="https://github.com/arlahoxha">
-    View GitHub Profile
-  </a>
-</section>
 
-<footer>
-  Arla Hoxha &mdash; Professional Portfolio
-  <br>
-  Public Relations & Marketing
-</footer>
 
+
+
+
+<section class="dark bp">
+<div class="wrap">
+<div class="label">02 / Campaign</div>
+<h2>BlissPharma · Black Friday 2026</h2>
+<p class="intro">Feed posts and stories for the BlissPharma.al Black Friday campaign.</p>
+<div class="grid four">
+<figure><div class="img"><img src="images/blisspharma-01.jpg" alt="Black Friday post" loading="lazy" onerror="this.remove()"></div></figure>
+<figure><div class="img"><img src="images/blisspharma-02.jpg" alt="Lierac Sunissime post" loading="lazy" onerror="this.remove()"></div></figure>
+<figure><div class="img"><img src="images/blisspharma-03.jpg" alt="Pharmaceris and Miniware post" loading="lazy" onerror="this.remove()"></div></figure>
+<figure><div class="img"><img src="images/blisspharma-04.jpg" alt="Brands on sale post" loading="lazy" onerror="this.remove()"></div></figure>
+</div></div></section>
+
+<section class="light blue" id="work">
+<div class="ring" style="width:480px;height:480px;right:-140px;bottom:-200px"></div>
+<div class="wrap">
+<div class="label">03 / Selected work</div>
+<h2>Koral Secrets</h2>
+<p class="intro">A curated selection of creative marketing and communication materials for the Korean beauty and skincare market in Albania. Exploring product storytelling, visual communication and consumer education.</p>
+<div class="grid">
+<article class="card"><div class="img"><img src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/korean-supplements.jpg" alt="Korean Supplements carousel" loading="lazy" onerror="this.remove()"></div><span class="cat">Educational Content</span><h3>Korean Supplements</h3><p>An educational carousel concept combining floating capsules and editorial typography to introduce Korean supplements and create curiosity around the product category.</p></article>
+<article class="card"><div class="img"><img src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/korean-beauty.jpg" alt="Korean Beauty Trends" loading="lazy" onerror="this.remove()"></div><span class="cat">Trend Marketing</span><h3>Korean Beauty Trends</h3><p>A bold creative concept using expressive typography, vibrant colors and playful beauty imagery to capture attention and introduce Korean beauty trends.</p></article>
+<article class="card"><div class="img"><img src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/hydra-calming.jpg" alt="Centellian24+ Hydra Calming" loading="lazy" onerror="this.remove()"></div><span class="cat">Product Communication</span><h3>Hydra Calming</h3><p>A product education visual combining lifestyle imagery, product photography and blue graphic accents to simplify skincare information.</p></article>
+<article class="card"><div class="img"><img src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/active-renew.jpg" alt="Centellian24+ Active Renew PDRN" loading="lazy" onerror="this.remove()"></div><span class="cat">Product Positioning</span><h3>Active Renew PDRN</h3><p>A coordinated product spotlight using purple accents and application imagery to communicate product positioning and key features.</p></article>
+<article class="card"><div class="img"><img src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/retinol.jpg" alt="Retinol and Bakuchiol" loading="lazy" onerror="this.remove()"></div><span class="cat">Creative Copywriting</span><h3>Retinol &amp; Bakuchiol</h3><p>An ingredient-focused visual combining product imagery and concise educational copy to introduce a dual-ingredient skincare concept.</p></article>
+</div></div></section>
+
+<section class="light" id="instagram">
+<div class="ring" style="width:600px;height:600px;left:-220px;top:-160px"></div>
+<div class="wrap insta">
+<div>
+<div class="label">04 / Featured post</div>
+<h2><a href="https://www.instagram.com/p/DeCctKXiBvG/" target="_blank" rel="noopener" style="text-decoration:none">Instagram carousel</a></h2>
+<div class="sub">Swipe through the slides</div>
+<p>The full post with all its slides, in one place.</p>
+<a class="btn" href="https://www.instagram.com/p/DeCctKXiBvG/" target="_blank" rel="noopener">View on Instagram →</a>
+</div>
+<div class="embed"><iframe src="https://www.instagram.com/p/DeCctKXiBvG/embed/" title="Instagram post" loading="lazy" allowtransparency="true" scrolling="no" frameborder="0"></iframe><a class="open" href="https://www.instagram.com/p/DeCctKXiBvG/" target="_blank" rel="noopener">Open the published post ↗</a></div>
+</div></section>
+
+<section class="dark" id="editorial">
+<div class="ring" style="width:460px;height:460px;right:-120px;top:-200px"></div>
+<div class="wrap">
+<div class="label">05 / Published articles</div>
+<h2>Words that connect.</h2>
+<div class="grid">
+<article class="card"><span class="cat">Brand Storytelling</span><h3>SUNGBOON EDITOR</h3><p>An editorial feature exploring Korean skincare, brand identity and modern beauty communication.</p><a href="https://koralsecrets.al/blogs/news/sungboon-editor-marka-koreane-qe-redaktoi-standardet-e-skincare-it-modern-1" target="_blank" rel="noopener">Read the published article →</a></article>
+<article class="card"><div class="img"><img src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/retinol-summer-article.jpg" alt="Should You Use Retinol During Summer?" loading="lazy" onerror="this.remove()"></div><span class="cat">Educational Copywriting</span><h3>Should You Use Retinol During Summer?</h3><p>An educational article addressing common questions and misconceptions surrounding seasonal retinol use.</p><a href="https://koralsecrets.al/blogs/news/a-duhet-te-perdorni-retinol-gjate-veres" target="_blank" rel="noopener">Read article →</a></article>
+<article class="card"><div class="img"><img src="https://raw.githubusercontent.com/arlahoxha/koral-secrets-marketing/main/images/retinol-vs-retinal-article.jpg" alt="Retinol versus Retinal" loading="lazy" onerror="this.remove()"></div><span class="cat">Editorial Writing</span><h3>Retinol vs Retinal</h3><p>A comparative article explaining the distinction between two skincare ingredients through accessible, consumer-focused writing.</p><a href="https://koralsecrets.al/blogs/news/retinol-vs-retinal-cili-eshte-ndryshimi-dhe-cili-eshte-me-potent" target="_blank" rel="noopener">Read article →</a></article>
+</div></div></section>
+
+<section class="light blue contact" id="contact">
+<div class="ring" style="width:700px;height:700px;right:-200px;top:-120px"></div>
+<div class="ring" style="width:460px;height:460px;right:-80px;top:0"></div>
+<div class="wrap">
+<div class="label">06 / Let's connect</div>
+<h2>Let's create something meaningful.</h2>
+<p>Open to professional opportunities, creative collaborations and meaningful projects in Public Relations and Marketing.</p>
+<a class="pill solid" href="mailto:arlamarangozi@gmail.com">arlamarangozi@gmail.com</a>
+<a class="pill solid" href="tel:+355696316799">+355 69 631 6799</a>
+<a class="pill solid" href="Arla-Hoxha-CV.pdf" download>Download CV</a>
+<a class="pill solid" href="https://github.com/arlahoxha" target="_blank" rel="noopener">github.com/arlahoxha</a>
+</div></section>
+
+<footer>Arla Hoxha — Professional Portfolio · Public Relations &amp; Marketing</footer>
 </body>
 </html>
